@@ -1,0 +1,34 @@
+<!-- Calculate simple interest, compound interest, and EMI. 
+Input: Whether the user wants simple interest, compound interest, or EMI.
+Parameters:
+    For Simple Interest: Principal, Rate of interest, time
+    For compound interest: Principal, annaul rate of interest, time (years), no. of times interest is compounded.
+    For EMI: Principal, Rate of interest, time (months)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Financial Calculator</title>
+</head>
+<body>
+  <h1 id="body">Financial Calculator</h1><br><br><br>
+  <label for="calcType">Select Calculation Type:</label><br>
+  <select id="calcType">
+    <option value="simple">Simple Interest</option>
+    <option value="compound">Compound Interest</option>
+    <option value="EMI">EMI</option>
+  </select>
+    
+  <div id="inputFields">
+  </div>
+  <button id="calculateBtn">Calculate</button>
+  <div id="result">
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
