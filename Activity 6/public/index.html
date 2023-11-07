@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="studentApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body ng-controller="StudentController">
+    <h1>Student Information Form</h1>
+    <form name="studentForm" ng-submit="addStudent()">
+        <label for="rollNumber">Roll Number:</label>
+        <input type="text" id="rollNumber" name="rollNumber" ng-model="student.rollNumber" >
+        <span class="error" ng-show="studentForm.rollNumber.$touched && studentForm.rollNumber.$error.required">Roll number is required</span>
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" ng-model="student.name" >
+        <span class="error" ng-show="studentForm.name.$touched && studentForm.name.$error.required">Name is required</span>
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" ng-model="student.age" >
+        <span class="error" ng-show="studentForm.age.$touched && studentForm.age.$error.required">Age is required</span>
+        <br>
+        <label for="grade">Grade:</label>
+        <input type="text" id="grade" name="grade" ng-model="student.grade" >
+        <span class="error" ng-show="studentForm.grade.$touched && studentForm.grade.$error.required">Grade is required</span>
+        <br>
+        <button type="submit" ng-disabled="studentForm.$invalid">Submit</button>
+
+        <br><br>
+
+        <label for="searchRollNumber">Search by Roll Number:</label>
+        <input type="text" id="searchRollNumber" ng-model="searchRollNumber">
+        <button ng-click="getStudentByRollNumber()">Search</button>
+
+        <div ng-if="displayedStudent">
+            <h2>Found Student:</h2>
+            <p>Roll Number: {{ displayedStudent.rollNumber }}</p>
+            <p>Name: {{ displayedStudent.name }}</p>
+            <p>Age: {{ displayedStudent.age }}</p>
+            <p>Grade: {{ displayedStudent.grade }}</p>
+        </div>
+
+    </form>
+
+    <div class="container">
+        <h2>All Students</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Roll Number</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="student in students">
+                    <td>{{ student.rollNumber }}</td>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.age }}</td>
+                    <td>{{ student.grade }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
