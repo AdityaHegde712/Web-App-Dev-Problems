@@ -1,50 +1,8 @@
 [
   {
-    "rollNumber": "A",
-    "name": "A",
-    "age": 1,
+    "rollNumber": "21WU010153",
+    "name": "Aditya",
+    "age": 12,
     "grade": "A"
-  },
-  {
-    "rollNumber": "A",
-    "name": "A",
-    "age": 1,
-    "grade": "A"
-  },
-  {
-    "rollNumber": "1",
-    "name": "1",
-    "age": 1,
-    "grade": "1"
-  },
-  {
-    "age": 1,
-    "rollNumber": "B",
-    "name": "B",
-    "grade": "B"
-  },
-  {
-    "rollNumber": "A",
-    "name": "A",
-    "age": 1,
-    "grade": "1"
-  },
-  {
-    "rollNumber": "A",
-    "name": "A",
-    "age": 1,
-    "grade": "A"
-  },
-  {
-    "rollNumber": "A",
-    "name": "A",
-    "age": 1,
-    "grade": "A"
-  },
-  {
-    "rollNumber": "A",
-    "name": "A",
-    "age": 1,
-    "grade": "1"
   }
 ]

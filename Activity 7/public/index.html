@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>COMET Example</title>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    // Connect to the server
+    const socket = io();
+
+ 
+
+    // Listen for messages from the server
+    socket.on('message', function(data) {
+      console.log('Message from server:', data);
+      const messages = document.getElementById('messages');
+      messages.innerHTML += `<p>${data}</p>`;
+    });
+
+ 
+
+    // Send a message to the server
+    function sendMessage() {
+      const input = document.getElementById('messageInput');
+      socket.emit('clientEvent', input.value);
+      input.value = '';
+    }
+
+ 
+
+    document.getElementById('sendButton').addEventListener('click', sendMessage);
+  });
+</script>
+</head>
+<body>
+<h1>COMET Chat Example</h1>
+<div id="messages"></div>
+<input type="text" id="messageInput" />
+<button id="sendButton">Send</button>
+</body>
+</html>
